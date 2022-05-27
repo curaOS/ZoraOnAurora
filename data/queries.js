@@ -1,15 +1,15 @@
-import { gql } from "graphql-request"; // graphql query language
+import { gql } from 'graphql-request' // graphql query language
 
 // Collect all users and creation ids
 export const ZORA_CREATIONS_BY_USER = gql`
-  {
-    users {
-      creations {
-        id
-      }
+    {
+        users {
+            creations {
+                id
+            }
+        }
     }
-  }
-`;
+`
 
 /**
  * Returns gql query to retrieve specific Zora post
@@ -17,7 +17,7 @@ export const ZORA_CREATIONS_BY_USER = gql`
  * @returns {gql} query with template string embedded
  */
 export const ZORA_MEDIA_BY_ID = (id) => {
-  return gql`
+    return gql`
   {
     media(id:"${id.toString()}") {
       id,
@@ -32,8 +32,8 @@ export const ZORA_MEDIA_BY_ID = (id) => {
       createdAtTimestamp
     }
   }
-  `;
-};
+  `
+}
 
 /**
  * Returns gql query to retrieve all Zora posts by owner
@@ -41,7 +41,7 @@ export const ZORA_MEDIA_BY_ID = (id) => {
  * @returns {gql} query with template string embedded
  */
 export const ZORA_MEDIA_BY_OWNER = (owner) => {
-  return gql`
+    return gql`
     {
       medias(where: { owner: "${owner}" }) {
         id
@@ -56,8 +56,8 @@ export const ZORA_MEDIA_BY_OWNER = (owner) => {
         createdAtTimestamp
       }
     }
-  `;
-};
+  `
+}
 
 /**
  * Calculates maximum number of Zora media items
@@ -65,22 +65,22 @@ export const ZORA_MEDIA_BY_OWNER = (owner) => {
  * @returns {Number} max number of Zora media items
  */
 export const calculateLatestCreation = (users) => {
-  // Collect all users
-  const allUsers = users.users;
-  let allCreationIDs = [];
+    // Collect all users
+    const allUsers = users.users
+    let allCreationIDs = []
 
-  // For each user
-  for (const user of allUsers) {
-    // If user has creations
-    if (user.creations && user.creations.length > 0) {
-      // For each creation
-      for (const creation of user.creations) {
-        // Push creation ID (cast to int) to allCreationIDs
-        allCreationIDs.push(parseInt(creation.id));
-      }
+    // For each user
+    for (const user of allUsers) {
+        // If user has creations
+        if (user.creations && user.creations.length > 0) {
+            // For each creation
+            for (const creation of user.creations) {
+                // Push creation ID (cast to int) to allCreationIDs
+                allCreationIDs.push(parseInt(creation.id))
+            }
+        }
     }
-  }
 
-  // Return max creation ID
-  return Math.max(...allCreationIDs);
-};
+    // Return max creation ID
+    return Math.max(...allCreationIDs)
+}
