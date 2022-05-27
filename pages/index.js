@@ -81,28 +81,6 @@ export default function Home() {
     return (
         <Layout>
             {/* Subheader disclaimer */}
-            <div className={styles.subheader}>
-                <span>
-                    Zora.Gallery is an{' '}
-                    <a
-                        href="https://github.com/anish-agnihotri/zora.gallery"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        open-source
-                    </a>{' '}
-                    community-operated interface to{' '}
-                    <a
-                        href="https://zora.engineering"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        ZoraOS
-                    </a>
-                    .
-                </span>
-            </div>
-
             {posts.length > 0 ? (
                 // If posts array contains > 0 posts
                 <>
@@ -138,14 +116,7 @@ export default function Home() {
                                 {loading ? 'Loading...' : 'Load More'}
                             </button>
                         </div>
-                    ) : (
-                        // Else, display text signalling (end, beginning)
-                        <div className={styles.showcase__more}>
-                            <span>
-                                Is this the end or beginning? You decide.
-                            </span>
-                        </div>
-                    )}
+                    ) : null}
                 </>
             ) : (
                 // Else, display loading state

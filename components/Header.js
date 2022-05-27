@@ -20,7 +20,7 @@ export default function Header() {
             <div className={styles.header__logo}>
                 <Link href="/">
                     <a>
-                        <img src="/logo_orb.png" alt="Zora" />
+                        <img src="/logoWhite.png" alt="Zora" />
                     </a>
                 </Link>
             </div>
