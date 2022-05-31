@@ -18,12 +18,8 @@ export default function Home() {
         // Collect all users
         const allUsers = await client.request(ZORA_CREATIONS_BY_USER)
 
-        // console.log(allUsers);
-
         // Collect number of total posts
         const numPosts = calculateLatestCreation(allUsers)
-
-        console.log(numPosts)
 
         let initialPosts = []
 
