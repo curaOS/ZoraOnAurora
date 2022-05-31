@@ -60,16 +60,15 @@ function useWeb3() {
         const address = await signer.getAddress()
         setAddress(address)
 
-            // Generate Zora provider
-            const zora = new Zora(
-                signer,
-                1313161554,
-                '0x8eBFE992B1D55f1B8eFCa485f8EbEE6093dbAC55',
-                '0x86AdeeBDF8Ed1f28932b13c0589B23Dc28828Ebb'
-            )
+        // Generate Zora provider
+        const zora = new Zora(
+            signer,
+            1313161554,
+            '0x8eBFE992B1D55f1B8eFCa485f8EbEE6093dbAC55',
+            '0x86AdeeBDF8Ed1f28932b13c0589B23Dc28828Ebb'
+        )
 
-            setZora(zora)
-        }
+        setZora(zora)
     }
 
     /**
