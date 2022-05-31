@@ -17,8 +17,9 @@ const providerOptions = {
     walletconnect: {
         package: WalletConnectProvider,
         options: {
-            // Inject Infura
-            infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
+            rpc: {
+                1313161554: 'https://mainnet.aurora.dev',
+            },
         },
     },
 }
@@ -34,7 +35,7 @@ function useWeb3() {
     const setupWeb3Modal = () => {
         // Creaste new web3Modal
         const web3Modal = new Web3Modal({
-            network: 'mainnet',
+            network: 'aurora',
             cacheProvider: true,
             providerOptions: providerOptions,
         })
