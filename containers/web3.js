@@ -161,4 +161,5 @@ function useWeb3() {
 
 // Create unstate-next container
 const web3 = createContainer(useWeb3)
+
 export default web3
