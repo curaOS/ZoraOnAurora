@@ -27,13 +27,10 @@ export default function Profile({ address }) {
             // Colelct postID
             const postID = allPosts.medias[i].id
 
-            // FIXME: hardcoded fix for /dev/null lmao
-            if (postID !== '2') {
-                // Collect post
-                const post = await getPostByID(allPosts.medias[i].id)
-                // Push post to ownedMedia
-                ownedMedia.push(post)
-            }
+            // Collect post
+            const post = await getPostByID(allPosts.medias[i].id)
+            // Push post to ownedMedia
+            ownedMedia.push(post)
         }
 
         setPosts([...ownedMedia.reverse()]) // Update owned posts (reversed for newest first)
