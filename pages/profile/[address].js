@@ -66,9 +66,9 @@ export default function Profile({ address }) {
                     {/* Name/Address */}
                     <h3>{address.toLowerCase()}</h3>
 
-                    {/* Etherscan link */}
+                    {/* Aurorascan link */}
                     <a
-                        href={`https://etherscan.io/address/${address}`}
+                        href={`https://aurorascan.dev/address/${address}`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
