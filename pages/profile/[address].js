@@ -88,6 +88,7 @@ export default function Profile({ address }) {
                             // Return Post component
                             <Post
                                 key={i}
+                                id={post.id}
                                 creatorAddress={post.creator.id}
                                 ownerAddress={post.owner.id}
                                 createdAtTimestamp={post.createdAtTimestamp}
