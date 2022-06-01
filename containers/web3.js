@@ -150,6 +150,7 @@ function useWeb3() {
 
     // On load events
     useEffect(setupWeb3Modal, [])
+    useEffect(authenticate, [modal])
 
     return {
         address,
